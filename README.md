@@ -297,18 +297,6 @@ Before merging, an LLM conflict check runs on the pair. If the claims contradict
 
 ---
 
-### One limitation
-
-The evidence grounding check is a strict substring match. If the LLM slightly rephrases or reformats a quote — different whitespace, punctuation, or truncation — the claim is rejected even if the content is valid. This causes over-filtering on sources with complex or inconsistent formatting, and can result in a source contributing fewer claims than expected.
-
----
-
-### One improvement with more time
-
-Replace the strict substring validation with a fuzzy or semantic match (e.g., checking that the evidence has a cosine similarity above a threshold with passages from the source). This would retain valid claims that fail the exact match due to minor formatting differences, improving recall without sacrificing grounding.
-
----
-
 ## Stretch Goals Implemented
 
 | Goal | Status |
@@ -317,3 +305,15 @@ Replace the strict substring validation with a fuzzy or semantic match (e.g., ch
 | Simple clustering visualization | Implemented — PCA scatter plot saved as `clusters.png` |
 | Configurable grouping threshold | Implemented — `SIMILARITY_THRESHOLD` in `.env` |
 | Re-run without duplicating outputs | Implemented — output files are overwritten on each run; duplicate URLs are skipped within a run |
+
+---
+
+## Limitation
+
+The evidence grounding check is a strict substring match. If the LLM slightly rephrases or reformats a quote — different whitespace, punctuation, or truncation — the claim is rejected even if the content is valid. This causes over-filtering on sources with complex or inconsistent formatting, and can result in a source contributing fewer claims than expected.
+
+---
+
+## Improvement With More Time
+
+Add claim caching — after extracting claims from a source, save the results to a local cache file keyed by the source URL or filename. On re-runs, the agent would load cached claims instead of making LLM calls for sources it has already processed. This would significantly reduce API costs and runtime when iterating on the same set of sources, since claim extraction is the slowest and most expensive step in the pipeline.
