@@ -177,15 +177,20 @@ Sample output:
 ```markdown
 # Research Digest: AI in Healthcare
 
-## Theme 3
+## Theme 1
 
-- **Claim:** Data-driven machine learning has emerged as a promising approach for building accurate and robust statistical models from medical data.
+- **Claim:** AI can analyze medical images, patient data, and genomic information to identify diseases and conditions with greater precision than traditional methods.
+  - Source: Artificial intelligence (AI) in healthcare | Google Cloud
+
+- **Claim:** Artificial intelligence (AI) will increasingly be applied within the field of healthcare.
+  - Source: The potential for artificial intelligence in healthcare - PMC
+
+## Theme 5
+
+- **Claim:** Data-driven machine learning (ML) has emerged as a promising approach for building accurate and robust statistical models from medical data.
   - Source: The future of digital health with federated learning | npj Digital Medicine
 
-- **Claim:** Machine learning is a common form of AI in healthcare.
-  - Source: Artificial intelligence in healthcare | Wikipedia
-
-## Theme 4
+## Theme 6
 
 - **Claim:** Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.
   - Source: The future of digital health with federated learning | npj Digital Medicine
@@ -197,20 +202,20 @@ Per-source metadata and all extracted claims with evidence quotes and confidence
 Sample output:
 ```json
 {
-  "7c7e3fbb-e723-4374-bab3-a0993a58082c": {
-    "title": "The future of digital health with federated learning | npj Digital Medicine",
-    "url": "https://www.nature.com/articles/s41746-020-00323-1",
-    "length": 57953,
+  "0e0eb568-d78d-4a19-b22c-3d68322b4974": {
+    "title": "Artificial intelligence (AI) in healthcare | Google Cloud",
+    "url": "https://cloud.google.com/use-cases/ai-in-healthcare",
+    "length": 41275,
     "claims": [
       {
-        "claim": "Data-driven machine learning has emerged as a promising approach for building accurate and robust statistical models from medical data.",
-        "evidence": "Data-driven machine learning (ML) has emerged as a promising approach for building accurate and robust statistical models from medical data, which is collected in huge volumes by modern healthcare systems.",
-        "confidence": 0.95
+        "claim": "AI can analyze medical images, patient data, and genomic information to identify diseases and conditions with greater precision than traditional methods.",
+        "evidence": "AI algorithms can analyze medical images, patient data, and genomic information to identify diseases and conditions with greater precision than traditional methods.",
+        "confidence": 1.0
       },
       {
-        "claim": "Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.",
-        "evidence": "Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.",
-        "confidence": 0.97
+        "claim": "AI can automate routine tasks such as appointment scheduling, data entry, and documentation.",
+        "evidence": "AI can automate routine tasks such as appointment scheduling, data entry, and documentation, freeing up healthcare professionals to focus on more complex patient care.",
+        "confidence": 1.0
       }
     ]
   }

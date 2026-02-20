@@ -27,7 +27,7 @@ def ingest_urls(urls: List[str]) -> List[Source]:
                 continue
 
             soup = BeautifulSoup(response.text, "html.parser")
-            title = soup.title.string if soup.title else None
+            title = soup.title.string.strip() if soup.title and soup.title.string else None
             content = clean_html(response.text)
             if not content:
                 logging.warning(f"No content extracted from URL {url}")
