@@ -1,67 +1,126 @@
 {
-  "cf474025-2ccc-450a-ad17-68392ccdf171": {
-    "title": "article1.txt",
-    "url": null,
-    "length": 262,
+  "0e0eb568-d78d-4a19-b22c-3d68322b4974": {
+    "title": "Artificial intelligence (AI) in healthcare | Google Cloud",
+    "url": "https://cloud.google.com/use-cases/ai-in-healthcare",
+    "length": 41275,
     "claims": [
       {
-        "claim": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
-        "evidence": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
+        "claim": "AI can analyze medical images, patient data, and genomic information to identify diseases and conditions with greater precision than traditional methods.",
+        "evidence": "AI algorithms can analyze medical images, patient data, and genomic information to identify diseases and conditions with greater precision than traditional methods.",
         "confidence": 1.0
       },
       {
-        "claim": "Machine learning models can identify patterns that human clinicians often miss.",
-        "evidence": "Machine learning models can also identify patterns that human clinicians often miss.",
+        "claim": "AI can automate routine tasks such as appointment scheduling, data entry, and documentation.",
+        "evidence": "AI can automate routine tasks such as appointment scheduling, data entry, and documentation, freeing up healthcare professionals to focus on more complex patient care.",
+        "confidence": 1.0
+      },
+      {
+        "claim": "AI can reduce unnecessary tests and procedures, leading to cost savings.",
+        "evidence": "AI can analyze patient data and identify unnecessary or redundant tests and procedures, leading to cost savings.",
+        "confidence": 1.0
+      },
+      {
+        "claim": "AI can predict potential health risks and outcomes, enabling proactive interventions and early detection of diseases.",
+        "evidence": "AI can predict potential health risks and outcomes, enabling proactive interventions and early detection of diseases.",
         "confidence": 1.0
       }
     ]
   },
-  "da5a53ac-674c-4b52-8d2e-13304367db34": {
-    "title": "article2.txt",
-    "url": null,
-    "length": 206,
+  "acb45eeb-78fb-4f4f-8382-d2213183e719": {
+    "title": "The future of digital health with federated learning | npj Digital Medicine",
+    "url": "https://www.nature.com/articles/s41746-020-00323-1",
+    "length": 58420,
     "claims": [
       {
-        "claim": "Hospitals are using AI systems to optimize staff scheduling",
-        "evidence": "Hospitals are using AI systems to optimize staff scheduling",
-        "confidence": 1.0
-      },
-      {
-        "claim": "AI systems can reduce patient wait times",
-        "evidence": "reduce patient wait times",
+        "claim": "Data-driven machine learning (ML) has emerged as a promising approach for building accurate and robust statistical models from medical data.",
+        "evidence": "Data-driven machine learning (ML) has emerged as a promising approach for building accurate and robust statistical models from medical data, which is collected in huge volumes by modern healthcare systems.",
         "confidence": 0.95
       },
       {
-        "claim": "AI systems can predict hospital readmissions",
-        "evidence": "predict hospital readmissions",
+        "claim": "Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.",
+        "evidence": "Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.",
         "confidence": 0.95
       },
       {
-        "claim": "Ethical guidelines are essential to AI applications",
-        "evidence": "Ethical guidelines are essential to ensure fairness and privacy in AI applications",
+        "claim": "FL still requires rigorous technical consideration to ensure that the algorithm is proceeding optimally without compromising safety or patient privacy.",
+        "evidence": "However, FL still requires rigorous technical consideration to ensure that the algorithm is proceeding optimally without compromising safety or patient privacy.",
+        "confidence": 0.8
+      }
+    ]
+  },
+  "2338133e-eca0-4572-a4fb-2cf281af447d": {
+    "title": "\r\n\tEthics and governance of artificial intelligence for health\r\n",
+    "url": "https://www.who.int/publications/i/item/9789240029200",
+    "length": 4622,
+    "claims": [
+      {
+        "claim": "The report identifies the ethical challenges and risks with the use of artificial intelligence of health, six consensus principles to ensure AI works to the public benefit of all countries.",
+        "evidence": "The report identifies the ethical challenges and risks with the use of artificial intelligence of health, six consensus principles to ensure AI works to the public benefit of all countries.",
         "confidence": 1.0
       },
       {
-        "claim": "AI applications require fairness and privacy",
-        "evidence": "ensure fairness and privacy in AI applications",
+        "claim": "New technologies that use artificial intelligence hold great promise to improve diagnosis, treatment, health research and drug development and to support governments carrying out public health functions, including surveillance and outbreak response.",
+        "evidence": "new technologies that use artificial intelligence hold great promise to improve diagnosis, treatment, health research and drug development and to support governments carrying out public health functions, including surveillance and outbreak response",
         "confidence": 1.0
       }
     ]
   },
-  "62003372-b313-4323-becf-37bf2042f46c": {
-    "title": "AI and Healthcare",
-    "url": null,
-    "length": 286,
+  "8623e138-a36e-431d-ab04-3882a941a854": {
+    "title": "Think Topics | IBM",
+    "url": "https://www.ibm.com/topics/ai-healthcare",
+    "length": 22580,
     "claims": [
       {
-        "claim": "Patient data privacy remains a significant challenge",
-        "evidence": "Patient data privacy remains a significant challenge, especially when large datasets are used to train machine learning models.",
+        "claim": "Data mining combines statistics and artificial intelligence to analyze large datasets.",
+        "evidence": "Learn how data mining combines statistics and artificial intelligence to analyze large datasets to discover meaningful insights and useful information.",
         "confidence": 1.0
       },
       {
-        "claim": "Integration of AI technologies introduces risks",
-        "evidence": "Integration of AI technologies introduces risks",
+        "claim": "Chatbots simulate human conversation using NLP and generative AI.",
+        "evidence": "Explore chatbot technology to understand how chatbots simulate human conversation, often relying on NLP to parse inputs and generative AI to automate responses.",
         "confidence": 1.0
+      },
+      {
+        "claim": "DDoS attacks flood websites with malicious traffic.",
+        "evidence": "Find out how a DDoS attack floods websites and other network resources with malicious traffic, disrupting normal activity and denying access to legitimate users.",
+        "confidence": 1.0
+      },
+      {
+        "claim": "Phishing tricks users into divulging sensitive data.",
+        "evidence": "Uncover and understand how phishing tricks users into divulging sensitive data, downloading malware and making themselves or their organizations vulnerable to cybercrime.",
+        "confidence": 1.0
+      },
+      {
+        "claim": "Quantum computing uses quantum mechanics to solve complex problems.",
+        "evidence": "Study the basics to learn how this technology uses quantum mechanics to solve complex problems beyond classical computers\u2019 capabilities and explore the potential impact it can have across many industries.",
+        "confidence": 1.0
+      }
+    ]
+  },
+  "1fd4e277-07c7-41b1-a987-c957e9b7ffbe": {
+    "title": "\n            The potential for artificial intelligence in healthcare - PMC\n        ",
+    "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6616181/",
+    "length": 36240,
+    "claims": [
+      {
+        "claim": "Artificial intelligence (AI) will increasingly be applied within the field of healthcare.",
+        "evidence": "The complexity and rise of data in healthcare means that artificial intelligence (AI) will increasingly be applied within the field.",
+        "confidence": 0.95
+      },
+      {
+        "claim": "Deep learning is increasingly being applied to radiomics, or the detection of clinically relevant features in imaging data beyond what can be perceived by the human eye.",
+        "evidence": "Deep learning is increasingly being applied to radiomics, or the detection of clinically relevant features in imaging data beyond what can be perceived by the human eye.",
+        "confidence": 0.95
+      },
+      {
+        "claim": "AI can perform as well as or better than humans at key healthcare tasks, such as diagnosing disease.",
+        "evidence": "There are already a number of research studies suggesting that AI can perform as well as or better than humans at key healthcare tasks, such as diagnosing disease.",
+        "confidence": 0.95
+      },
+      {
+        "claim": "Implementation factors will prevent large-scale automation of healthcare professional jobs for a considerable period.",
+        "evidence": "Although there are many instances in which AI can perform healthcare tasks as well or better than humans, implementation factors will prevent large-scale automation of healthcare professional jobs for a considerable period.",
+        "confidence": 0.95
       }
     ]
   }
