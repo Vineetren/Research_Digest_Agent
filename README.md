@@ -254,16 +254,6 @@ This provides a visual understanding of the research landscape.
 
 ---
 
-# 📘 Output Format
-
-- Test outputs are produced in the `data/outputs` folder.
-- Each test result folder contains:
-  - `digest.md`
-  - `sources.json`
-  - `clusters.png`
-
----
-
 ## 🧪 Test Structure and Results
 
 - Test inputs are kept in the `test_inputs/` folder.
