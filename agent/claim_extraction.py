@@ -23,6 +23,7 @@ Extract up to {MAX_CLAIMS_PER_SOURCE} key claims from the text below.
 Each claim must include:
 - claim: concise statement
 - evidence: exact quote from the text supporting the claim
+- confidence: a float between 0.0 and 1.0 indicating how clearly the claim is supported by the evidence
 
 You MUST return ONLY valid JSON.
 Do NOT include explanations.
@@ -34,7 +35,8 @@ Return EXACTLY this format:
 [
   {{
     "claim": "...",
-    "evidence": "..."
+    "evidence": "...",
+    "confidence": 0.95
   }}
 ]
 
@@ -74,7 +76,8 @@ TEXT:
             Claim(
                 claim=item["claim"],
                 evidence=item["evidence"],
-                source_id=source.source_id
+                source_id=source.source_id,
+                confidence=float(item["confidence"]) if "confidence" in item else None
             )
         )
 

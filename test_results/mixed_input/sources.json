@@ -1,58 +1,67 @@
 {
-  "f919136d-ca24-48d0-9734-a99ef2e6c2fd": {
+  "cf474025-2ccc-450a-ad17-68392ccdf171": {
+    "title": "article1.txt",
+    "url": null,
+    "length": 262,
     "claims": [
       {
         "claim": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
         "evidence": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
-        "confidence": null
+        "confidence": 1.0
       },
       {
         "claim": "Machine learning models can identify patterns that human clinicians often miss.",
         "evidence": "Machine learning models can also identify patterns that human clinicians often miss.",
-        "confidence": null
+        "confidence": 1.0
       }
     ]
   },
-  "83e09d9b-043b-4504-9dea-29a1f594e1f5": {
+  "da5a53ac-674c-4b52-8d2e-13304367db34": {
+    "title": "article2.txt",
+    "url": null,
+    "length": 206,
     "claims": [
       {
         "claim": "Hospitals are using AI systems to optimize staff scheduling",
         "evidence": "Hospitals are using AI systems to optimize staff scheduling",
-        "confidence": null
+        "confidence": 1.0
       },
       {
         "claim": "AI systems can reduce patient wait times",
         "evidence": "reduce patient wait times",
-        "confidence": null
+        "confidence": 0.95
       },
       {
         "claim": "AI systems can predict hospital readmissions",
         "evidence": "predict hospital readmissions",
-        "confidence": null
+        "confidence": 0.95
       },
       {
         "claim": "Ethical guidelines are essential to AI applications",
         "evidence": "Ethical guidelines are essential to ensure fairness and privacy in AI applications",
-        "confidence": null
+        "confidence": 1.0
       },
       {
         "claim": "AI applications require fairness and privacy",
         "evidence": "ensure fairness and privacy in AI applications",
-        "confidence": null
+        "confidence": 1.0
       }
     ]
   },
-  "297ef44b-f880-4d3f-bc25-921b7d1ec60f": {
+  "62003372-b313-4323-becf-37bf2042f46c": {
+    "title": "AI and Healthcare",
+    "url": null,
+    "length": 286,
     "claims": [
       {
         "claim": "Patient data privacy remains a significant challenge",
         "evidence": "Patient data privacy remains a significant challenge, especially when large datasets are used to train machine learning models.",
-        "confidence": null
+        "confidence": 1.0
       },
       {
         "claim": "Integration of AI technologies introduces risks",
         "evidence": "Integration of AI technologies introduces risks",
-        "confidence": null
+        "confidence": 1.0
       }
     ]
   }

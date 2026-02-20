@@ -33,6 +33,8 @@ def main():
     if args.folder_path:
         if os.path.exists(args.folder_path):
             sources.extend(ingest_folder(args.folder_path))
+        else:
+            print(f"Folder not found: {args.folder_path}")
 
     if not sources:
         print("No sources were loaded. Exiting.")
@@ -62,7 +64,8 @@ def main():
         print("Digest created (no claims).")
         return
 
-    digest = generate_digest(groups, args.topic)
+    sources_lookup = {s.source_id: s for s in sources}
+    digest = generate_digest(groups, args.topic, sources_lookup)
 
     with open(digest_file_path, "w", encoding="utf-8") as f:
         f.write(digest)

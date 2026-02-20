@@ -1,39 +1,45 @@
 {
-  "61ff9712-22c3-478a-8b3b-5847c5486fdb": {
+  "c6ffb769-59de-44b6-9e6f-a56b79747ef9": {
+    "title": "article1.txt",
+    "url": null,
+    "length": 365,
     "claims": [
       {
         "claim": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
         "evidence": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
-        "confidence": null
+        "confidence": 1.0
       },
       {
         "claim": "Machine learning models trained on large medical datasets are capable of identifying patterns that are often missed by human clinicians.",
         "evidence": "Machine learning models trained on large medical datasets are capable of identifying patterns that are often missed by human clinicians.",
-        "confidence": null
+        "confidence": 1.0
       },
       {
-        "claim": "AI systems are being used to optimize staff scheduling, reduce patient wait times, and predict hospital readmissions.",
+        "claim": "AI systems are being used to optimize staff scheduling.",
         "evidence": "AI systems are being used to optimize staff scheduling, reduce patient wait times, and predict hospital readmissions.",
-        "confidence": null
+        "confidence": 0.95
       }
     ]
   },
-  "184fc954-3919-4cbb-b1d0-29cbcb9c60a9": {
+  "22151bee-98bc-480b-ae6d-1c7f3ce0622a": {
+    "title": "article2.txt",
+    "url": null,
+    "length": 365,
     "claims": [
-      {
-        "claim": "Machine learning models trained on large medical datasets are capable of identifying patterns that are often missed by human clinicians.",
-        "evidence": "Machine learning models trained on large medical datasets are capable of identifying patterns that are often missed by human clinicians.",
-        "confidence": null
-      },
-      {
-        "claim": "AI systems are being used to optimize staff scheduling, reduce patient wait times, and predict hospital readmissions.",
-        "evidence": "AI systems are being used to optimize staff scheduling, reduce patient wait times, and predict hospital readmissions.",
-        "confidence": null
-      },
       {
         "claim": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
         "evidence": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
-        "confidence": null
+        "confidence": 1.0
+      },
+      {
+        "claim": "Machine learning models trained on large medical datasets are capable of identifying patterns that are often missed by human clinicians.",
+        "evidence": "Machine learning models trained on large medical datasets are capable of identifying patterns that are often missed by human clinicians.",
+        "confidence": 1.0
+      },
+      {
+        "claim": "AI systems are being used to optimize staff scheduling.",
+        "evidence": "AI systems are being used to optimize staff scheduling, reduce patient wait times, and predict hospital readmissions.",
+        "confidence": 0.95
       }
     ]
   }

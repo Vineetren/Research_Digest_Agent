@@ -2,85 +2,102 @@
 
 ## Theme 1
 
-- **Claim:** Data-driven machine learning has emerged as a promising approach for building accurate and robust statistical models from medical data.
-  - Source: 1dc6001e-9efb-4db3-9966-622f207d81ca
+- **Claim:** AI can analyze medical images, patient data, and genomic information to identify diseases and conditions with greater precision than traditional methods.
+  - Source: Artificial intelligence (AI) in healthcare | Google Cloud
+
+- **Claim:** Artificial intelligence (AI) will increasingly be applied within the field of healthcare.
+  - Source: 
+            The potential for artificial intelligence in healthcare - PMC
+        
 
 ## Theme 2
 
-- **Claim:** Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.
-  - Source: 1dc6001e-9efb-4db3-9966-622f207d81ca
+- **Claim:** AI can automate routine tasks such as appointment scheduling, data entry, and documentation.
+  - Source: Artificial intelligence (AI) in healthcare | Google Cloud
 
 ## Theme 3
 
-- **Claim:** Federated learning (FL) enables gaining insights collaboratively without moving patient data beyond the firewalls of the institutions in which they reside.
-  - Source: 1dc6001e-9efb-4db3-9966-622f207d81ca
+- **Claim:** AI can reduce unnecessary tests and procedures, leading to cost savings.
+  - Source: Artificial intelligence (AI) in healthcare | Google Cloud
 
 ## Theme 4
 
-- **Claim:** Models trained by FL can achieve performance levels comparable to ones trained on centrally hosted data sets and superior to models that only see isolated single-institutional data.
-  - Source: 1dc6001e-9efb-4db3-9966-622f207d81ca
+- **Claim:** AI can predict potential health risks and outcomes, enabling proactive interventions and early detection of diseases.
+  - Source: Artificial intelligence (AI) in healthcare | Google Cloud
+
+- **Claim:** The report identifies the ethical challenges and risks with the use of artificial intelligence of health, six consensus principles to ensure AI works to the public benefit of all countries.
+  - Source: 
+
+	Ethics and governance of artificial intelligence for health
+
+
 
 ## Theme 5
 
-- **Claim:** A successful implementation of FL could hold a significant potential for enabling precision medicine at large-scale, leading to models that yield unbiased decisions, optimally reflect an individual’s physiology, and are sensitive to rare diseases while respecting governance and privacy concerns.
-  - Source: 1dc6001e-9efb-4db3-9966-622f207d81ca
+- **Claim:** Data-driven machine learning (ML) has emerged as a promising approach for building accurate and robust statistical models from medical data.
+  - Source: The future of digital health with federated learning | npj Digital Medicine
 
 ## Theme 6
 
-- **Claim:** WHO has regional websites
-  - Source: 27c5bc33-aa61-46c5-a871-141467933fc7
+- **Claim:** Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.
+  - Source: The future of digital health with federated learning | npj Digital Medicine
 
 ## Theme 7
 
-- **Claim:** WHO has a presence in countries
-  - Source: 27c5bc33-aa61-46c5-a871-141467933fc7
+- **Claim:** FL still requires rigorous technical consideration to ensure that the algorithm is proceeding optimally without compromising safety or patient privacy.
+  - Source: The future of digital health with federated learning | npj Digital Medicine
 
 ## Theme 8
 
-- **Claim:** WHO has a newsroom
-  - Source: 27c5bc33-aa61-46c5-a871-141467933fc7
+- **Claim:** New technologies that use artificial intelligence hold great promise to improve diagnosis, treatment, health research and drug development and to support governments carrying out public health functions, including surveillance and outbreak response.
+  - Source: 
+
+	Ethics and governance of artificial intelligence for health
+
+
 
 ## Theme 9
 
-- **Claim:** WHO has a data collection system
-  - Source: 27c5bc33-aa61-46c5-a871-141467933fc7
+- **Claim:** Data mining combines statistics and artificial intelligence to analyze large datasets.
+  - Source: Think Topics | IBM
 
 ## Theme 10
 
-- **Claim:** WHO has a financial system
-  - Source: 27c5bc33-aa61-46c5-a871-141467933fc7
+- **Claim:** Chatbots simulate human conversation using NLP and generative AI.
+  - Source: Think Topics | IBM
 
 ## Theme 11
 
-- **Claim:** Data mining combines statistics and artificial intelligence to analyze large datasets to discover meaningful insights and useful information.
-  - Source: 72073674-5465-461d-877b-ff4462f41e72
+- **Claim:** DDoS attacks flood websites with malicious traffic.
+  - Source: Think Topics | IBM
 
 ## Theme 12
 
-- **Claim:** Chatbots simulate human conversation, often relying on NLP to parse inputs and generative AI to automate responses.
-  - Source: 72073674-5465-461d-877b-ff4462f41e72
+- **Claim:** Phishing tricks users into divulging sensitive data.
+  - Source: Think Topics | IBM
 
 ## Theme 13
 
-- **Claim:** Business intelligence processes data to gain actionable insights and inform decision-making.
-  - Source: 72073674-5465-461d-877b-ff4462f41e72
+- **Claim:** Quantum computing uses quantum mechanics to solve complex problems.
+  - Source: Think Topics | IBM
 
 ## Theme 14
 
-- **Claim:** Artificial intelligence (AI) will increasingly be applied within the field of healthcare.
-  - Source: 57140ec1-152f-4a29-a609-04697eb75466
+- **Claim:** Deep learning is increasingly being applied to radiomics, or the detection of clinically relevant features in imaging data beyond what can be perceived by the human eye.
+  - Source: 
+            The potential for artificial intelligence in healthcare - PMC
+        
 
 ## Theme 15
 
-- **Claim:** Several types of AI are already being employed by payers and providers of care, and life sciences companies.
-  - Source: 57140ec1-152f-4a29-a609-04697eb75466
+- **Claim:** AI can perform as well as or better than humans at key healthcare tasks, such as diagnosing disease.
+  - Source: 
+            The potential for artificial intelligence in healthcare - PMC
+        
 
 ## Theme 16
 
-- **Claim:** Deep learning is increasingly being applied to radiomics, or the detection of clinically relevant features in imaging data beyond what can be perceived by the human eye.
-  - Source: 57140ec1-152f-4a29-a609-04697eb75466
-
-## Theme 17
-
 - **Claim:** Implementation factors will prevent large-scale automation of healthcare professional jobs for a considerable period.
-  - Source: 57140ec1-152f-4a29-a609-04697eb75466
+  - Source: 
+            The potential for artificial intelligence in healthcare - PMC
+        

@@ -45,11 +45,14 @@ def group_claims(claims: List[Claim]) -> List[ClaimGroup]:
             # Check similarity threshold
             if similarity >= SIMILARITY_THRESHOLD:
 
-                # Conflict check
-                conflict = llm_conflict_check(
-                    claim.claim,
-                    claims[j].claim
-                )
+                # Skip conflict check for identical claims — always group them
+                if claim.claim.strip() == claims[j].claim.strip():
+                    conflict = False
+                else:
+                    conflict = llm_conflict_check(
+                        claim.claim,
+                        claims[j].claim
+                    )
 
                 if not conflict:
                     current_group_claims.append(claims[j])

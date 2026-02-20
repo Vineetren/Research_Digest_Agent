@@ -3,14 +3,14 @@
 ## Theme 1
 
 - **Claim:** AI improves diagnostic accuracy in hospitals
-  - Source: 65822387-64ad-4ec0-b1db-dafd82634dff
+  - Source: claim1.txt
 
 ## Theme 2
 
-- **Claim:** AI reduces diagnostic accuracy in hospitals
-  - Source: ab49dee0-f8a7-4115-b215-566fd38f60ef
+- **Claim:** AI reduces errors in hospitals
+  - Source: claim1.txt
 
 ## Theme 3
 
-- **Claim:** Algorithmic bias is a reason for AI reducing diagnostic accuracy in hospitals
-  - Source: ab49dee0-f8a7-4115-b215-566fd38f60ef
+- **Claim:** AI reduces diagnostic accuracy in hospitals
+  - Source: claim2.txt

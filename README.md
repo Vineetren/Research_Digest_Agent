@@ -1,316 +1,312 @@
-# 🧠 AI Research Digest Generator
+# Research Digest Agent
 
-An end-to-end system that automatically ingests multiple information sources (URLs or local files), extracts key claims, validates them, groups them by semantic similarity, detects conflicts, and generates a structured research digest — complete with a cluster visualization.
-
-This project simulates a lightweight research intelligence pipeline for aggregating and synthesizing information across documents.
+An autonomous agent that ingests multiple sources on a topic, extracts key claims, removes redundancy, preserves conflicting viewpoints, and produces a structured, evidence-backed research brief.
 
 ---
 
-# 📌 What This Project Does
+## Table of Contents
 
-Given a topic and a set of sources, the system:
-
-1. Loads content from URLs or local files  
-2. Extracts factual, topic-relevant claims using an LLM  
-3. Validates claims against source content  
-4. Generates semantic embeddings for each claim  
-5. Groups similar claims into themes  
-6. Detects contradictions between similar claims  
-7. Produces a structured Markdown research digest  
-8. Generates a 2D visualization of thematic clusters  
-
-The goal is to demonstrate multi-document reasoning, semantic grouping, and research synthesis.
+1. [How It Works](#how-it-works)
+2. [Project Structure](#project-structure)
+3. [Installation](#installation)
+4. [Environment Setup](#environment-setup)
+5. [How to Run](#how-to-run)
+6. [Output Files](#output-files)
+7. [Running Tests](#running-tests)
+8. [Questions](#questions)
+9. [Stretch Goals Implemented](#stretch-goals-implemented)
+10. [Limitation](#limitation)
+11. [Improvement With More Time](#improvement-with-more-time)
 
 ---
 
-# 🏗️ High-Level Architecture
+## How It Works
+
+The agent runs a sequential pipeline:
 
 ```
-Input (URLs / Folder)
+Input (URLs or Local Folder)
         ↓
-Content Ingestion
+1. Content Ingestion       — fetch/read, clean HTML, store metadata
         ↓
-Claim Extraction (LLM)
+2. Claim Extraction        — LLM extracts claims + evidence + confidence
         ↓
-Claim Validation
+3. Claim Validation        — evidence must exist verbatim in source text
         ↓
-Embedding Generation
+4. Embedding               — sentence-transformer encodes each claim
         ↓
-Semantic Grouping
+5. Semantic Grouping       — cosine similarity clusters similar claims
         ↓
-Conflict Detection
+6. Conflict Detection      — LLM checks if similar claims contradict each other
         ↓
-Digest Generation
-        ↓
-Cluster Visualization (PCA)
+7. Export                  — digest.md, sources.json, clusters.png
 ```
 
 ---
 
-# 📂 Project Structure
+## Project Structure
 
 ```
-agent/
+Research_Digest_Agent/
 │
-├── ingestion.py          # Load URLs or folder files
-├── cleaning.py           # HTML cleaning utilities
-├── claim_extraction.py   # LLM-based claim extraction
-├── validation.py         # Claim validation
-├── embeddings.py         # Sentence-transformer embeddings
-├── grouping.py           # Semantic clustering logic
-├── conflict.py           # LLM-based contradiction detection
-├── digest.py             # Markdown digest generation
-├── exporter.py           # Export source metadata
-├── visualization.py      # PCA cluster visualization
+├── main.py                        # Entry point
 │
-config/
-└── settings.py           # Similarity thresholds and configs
+├── agent/
+│   ├── ingestion.py               # Fetch URLs or read local files
+│   ├── cleaning.py                # Strip HTML, normalize text
+│   ├── claim_extraction.py        # LLM-based claim + evidence + confidence extraction
+│   ├── validation.py              # Verify evidence exists in source text
+│   ├── embeddings.py              # Sentence-transformer embeddings + cosine similarity
+│   ├── grouping.py                # Group similar claims, separate conflicts
+│   ├── conflict.py                # LLM conflict detection between claim pairs
+│   ├── digest.py                  # Generate digest.md
+│   ├── exporter.py                # Generate sources.json
+│   ├── vizualization.py           # PCA cluster plot
+│   └── models.py                  # Pydantic data models (Source, Claim, ClaimGroup)
 │
-main.py                   # Entry point
+├── config/
+│   └── settings.py                # Load env variables and thresholds
+│
+├── tests/
+│   └── test_agent.py              # 3 pytest tests
+│
+├── test_inputs/                   # Sample inputs for each test scenario
+│   ├── empty_source/
+│   ├── duplicate_source/
+│   ├── conflict_source/
+│   ├── mixed_input_source/
+│   └── urls_5_source/
+│
+├── test_results/                  # Pre-generated outputs for each scenario
+│   ├── empty/
+│   ├── duplicate/
+│   ├── conflict/
+│   ├── mixed_input/
+│   └── urls_5/
+│
+├── data/outputs/                  # Live output from the latest run
+│   ├── digest.md
+│   ├── sources.json
+│   └── clusters.png
+│
+├── conftest.py                    # Pytest path configuration
+├── .env                           # API keys and config (not committed)
+├── requirements.txt
+└── README.md
 ```
 
 ---
 
-# ⚙️ Installation
+## Installation
 
-## 📦 Dependencies
-
-Main libraries used:
-
-- requests
-- beautifulsoup4
-- pydantic
-- sentence-transformers
-- scikit-learn
-- openai
-- python-dotenv
-- pytest
-- numpy
-- matplotlib
-
-Install:
-
-```
+```bash
+git clone <repo-url>
+cd Research_Digest_Agent
+python -m venv venv
+venv\Scripts\activate        # Windows
 pip install -r requirements.txt
 ```
 
 ---
 
-## 🔑 Environment Setup
+## Environment Setup
 
 Create a `.env` file in the root directory:
 
 ```
-OPENROUTER_API_KEY=your_openai_api_key_here
+OPENROUTER_API_KEY=your_api_key_here
 OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
 CHAT_MODEL=meta-llama/llama-3-8b-instruct
 SIMILARITY_THRESHOLD=0.65
+MAX_CLAIMS_PER_SOURCE=5
+MIN_CONTENT_LENGTH=200
 ```
 
-### Variable Explanation
-
-- `OPENROUTER_API_KEY` → Your OpenRouter API key  
-- `OPENROUTER_BASE_URL` → Base endpoint for OpenRouter API  
-- `CHAT_MODEL` → Model used for claim extraction and conflict detection  
-- `SIMILARITY_THRESHOLD` → Cosine similarity cutoff for grouping claims  
-
-Make sure environment variables are loaded using `python-dotenv`.
+| Variable | Description |
+|---|---|
+| `OPENROUTER_API_KEY` | Your OpenRouter API key |
+| `OPENROUTER_BASE_URL` | OpenRouter API base URL |
+| `CHAT_MODEL` | LLM used for claim extraction and conflict detection |
+| `SIMILARITY_THRESHOLD` | Cosine similarity cutoff for grouping claims (0.0–1.0) |
+| `MAX_CLAIMS_PER_SOURCE` | Maximum claims extracted per source |
+| `MIN_CONTENT_LENGTH` | Minimum characters required to process a source |
 
 ---
 
-# 🚀 How to Run
+## How to Run
 
-## Option 1 — Using URLs
+### Option 1 — URLs
 
-Create a file with one URL per line:
+Create a text file with one URL per line:
 
 ```
 https://example.com/article1
 https://example.com/article2
 ```
 
-Run:
-
-```
-python main.py --urls_file {file_path} --topic "{topic}"
+```bash
+python main.py --urls_file <path_to_urls_file> --topic "<your_topic>"
 ```
 
----
+### Option 2 — Local Folder
 
-## Option 2 — Using a Local Folder
+The folder can contain `.txt` or `.html` files:
 
-Folder may contain:
-- `.txt`
-- `.html`
-
-Run:
-
-```
-python main.py --folder_path {folder_path} --topic "{topic}"
+```bash
+python main.py --folder_path <path_to_folder> --topic "<your_topic>"
 ```
 
----
+### Option 3 — Both Together
 
-## Option 3 — Both
-
-```
-python main.py \
-  --urls_file {file_path} \
-  --folder_path {folder_path} \
-  --topic "{topic}"
+```bash
+python main.py --urls_file <path_to_urls_file> --folder_path <path_to_folder> --topic "<your_topic>"
 ```
 
----
-
-# 📊 Output Files
-
-Generated in:
-
-```
-data/outputs/
-```
-
-- `digest.md` → Structured research summary  
-- `sources.json` → Metadata for traceability  
-- `clusters.png` → Visualization of grouped themes  
+Outputs are written to `data/outputs/` after each run. Re-running overwrites the previous output — no duplication.
 
 ---
 
-# 🧠 Key Features Explained
+## Output Files
 
-## 1️⃣ Multi-Source Ingestion
+All outputs are saved to `data/outputs/`:
 
-Supports:
+### `digest.md`
+Structured research summary organised into numbered themes. Each claim is listed with its source title. Multiple claims in the same theme means they were grouped as semantically similar across sources.
 
-- Web URLs  
-- Local `.txt` files  
-- Local `.html` files  
+Sample output:
+```markdown
+# Research Digest: AI in Healthcare
 
-HTML is cleaned safely, while plain text is preserved.
+## Theme 3
 
----
+- **Claim:** Data-driven machine learning has emerged as a promising approach for building accurate and robust statistical models from medical data.
+  - Source: The future of digital health with federated learning | npj Digital Medicine
 
-## 2️⃣ LLM-Based Claim Extraction
+- **Claim:** Machine learning is a common form of AI in healthcare.
+  - Source: Artificial intelligence in healthcare | Wikipedia
 
-The system extracts structured, factual claims relevant to the specified topic.
+## Theme 4
 
----
-
-## 3️⃣ Claim Validation
-
-Each extracted claim is checked against the source content to ensure it is supported.
-
-This prevents hallucinated or unsupported claims from entering the digest.
-
----
-
-## 4️⃣ Semantic Grouping (Embeddings)
-
-The system uses:
-
-- `sentence-transformers/all-MiniLM-L6-v2`  
-- Cosine similarity  
-
-Each claim is converted into a vector representation.
-
-Claims above a configurable similarity threshold are grouped into themes.
-
-Example threshold:
-
-```
-SIMILARITY_THRESHOLD = 0.65
+- **Claim:** Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.
+  - Source: The future of digital health with federated learning | npj Digital Medicine
 ```
 
----
+### `sources.json`
+Per-source metadata and all extracted claims with evidence quotes and confidence scores. The evidence field is the exact quote from the source text that supports the claim.
 
-## 5️⃣ Conflict Detection
+Sample output:
+```json
+{
+  "7c7e3fbb-e723-4374-bab3-a0993a58082c": {
+    "title": "The future of digital health with federated learning | npj Digital Medicine",
+    "url": "https://www.nature.com/articles/s41746-020-00323-1",
+    "length": 57953,
+    "claims": [
+      {
+        "claim": "Data-driven machine learning has emerged as a promising approach for building accurate and robust statistical models from medical data.",
+        "evidence": "Data-driven machine learning (ML) has emerged as a promising approach for building accurate and robust statistical models from medical data, which is collected in huge volumes by modern healthcare systems.",
+        "confidence": 0.95
+      },
+      {
+        "claim": "Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.",
+        "evidence": "Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.",
+        "confidence": 0.97
+      }
+    ]
+  }
+}
+```
 
-Before grouping two similar claims together, the system:
+### `clusters.png`
+2D PCA scatter plot of all theme groups. Each point is one theme — closer points are semantically related, further points cover distinct topics.
 
-- Sends both claims to an LLM  
-- Asks whether they contradict each other  
-- Keeps them separate if they conflict  
+Sample output:
 
-This ensures:
-
-- Similar but opposite claims are not merged  
-- The digest preserves disagreement  
-
----
-
-## 6️⃣ Cluster Visualization
-
-Each theme receives an average embedding vector.
-
-Vectors are reduced from 384 dimensions to 2D using PCA.
-
-The result is a scatter plot where:
-
-- Each dot = one semantic theme  
-- Distance = semantic similarity  
-- Closer themes are more related  
-
-This provides a visual understanding of the research landscape.
-
----
-
-## 🧪 Test Structure and Results
-
-- Test inputs are kept in the `test_inputs/` folder.
-- Test outputs are kept in the `test_results/` folder.
-- Each test result folder contains:
-  - `digest.md`
-  - `sources.json`
-  - `clusters.png`
+![Cluster Visualization](data/outputs/clusters.png)
 
 ---
 
-# ⚙️ Design Decisions
+## Running Tests
 
-## Why Sentence Transformers?
+```bash
+pytest tests/test_agent.py -v
+```
 
-Efficient and strong semantic embeddings for grouping related claims.
+Three tests are included:
 
-## Why PCA?
+| Test | What it verifies |
+|---|---|
+| `test_empty_source_skipped` | Empty files produce no sources — pipeline skips them safely |
+| `test_duplicate_claims_are_grouped` | Identical claims from different sources are merged into one group |
+| `test_conflicting_claims_kept_separate` | Contradicting claims are never merged, even when semantically similar |
 
-Fast, simple dimensionality reduction for visual explanation.
+Tests 2 and 3 mock the LLM and embedding calls for speed and determinism. Test 1 uses the real `test_inputs/empty_source/empty.txt` file.
 
-## Why Use an LLM for Conflict Detection?
+### Sample Inputs and Pre-generated Outputs
 
-Cosine similarity detects closeness — not contradiction.  
-LLMs allow reasoning over logical disagreement.
+Each test scenario has a corresponding input folder and a pre-generated output folder:
 
----
+| Scenario | Input | Output |
+|---|---|---|
+| 5 URLs | `test_inputs/urls_5_source/` | `test_results/urls_5/` |
+| Duplicate content | `test_inputs/duplicate_source/` | `test_results/duplicate/` |
+| Conflicting claims | `test_inputs/conflict_source/` | `test_results/conflict/` |
+| Mixed (txt + html) | `test_inputs/mixed_input_source/` | `test_results/mixed_input/` |
+| Empty file | `test_inputs/empty_source/` | `test_results/empty/` |
 
-# ⚠ Limitations
-
-- PCA is linear and may not perfectly capture cluster structure.  
-- LLM conflict detection depends on model reliability.  
-- Very short input files may be filtered if aggressively cleaned.  
-- Not optimized for large-scale distributed processing.  
-
----
-
-# 🔮 Possible Future Improvements
-
-- Replace PCA with UMAP for better visualization  
-- Interactive dashboard (Plotly or Streamlit)  
-- Caching embeddings for faster re-runs  
-- Adjustable similarity threshold via CLI  
-- Confidence scoring per claim  
-- Duplicate-run detection  
-- PDF export option  
+Each output folder contains `digest.md`, `sources.json`, and `clusters.png` from running the agent on that input. To regenerate any output, run the agent with the corresponding input and copy the results from `data/outputs/` to the relevant `test_results/` subfolder.
 
 ---
 
-# 🎯 What This Project Demonstrates
+### How does the agent process sources step by step?
 
-- Multi-document reasoning  
-- Semantic similarity grouping  
-- Conflict-aware aggregation  
-- LLM-assisted validation  
-- Structured research synthesis  
-- High-dimensional embedding visualization  
-- Clean modular pipeline design  
+1. **Ingestion** — URLs are fetched with `requests`; local files are read directly. Duplicate URLs are skipped. HTML is parsed with BeautifulSoup, scripts and styles are stripped, and text is normalised. Files shorter than `MIN_CONTENT_LENGTH` are discarded with a warning.
 
-This system demonstrates how AI can be used to automate research digestion and theme discovery across heterogeneous sources.
+2. **Claim Extraction** — Each source's cleaned text is sent to an LLM via OpenRouter. The LLM returns up to `MAX_CLAIMS_PER_SOURCE` structured claims, each containing a concise statement, an exact evidence quote from the text, and a confidence score (0.0–1.0).
+
+3. **Validation** — Each claim's evidence string is checked as a literal substring of the original source content. Claims whose evidence cannot be found verbatim are dropped. This prevents hallucinated or paraphrased claims from entering the digest.
+
+4. **Embedding** — All validated claims are encoded into 384-dimensional vectors using `sentence-transformers/all-MiniLM-L6-v2`.
+
+5. **Grouping** — Cosine similarity is computed between every pair of claim vectors. If similarity exceeds `SIMILARITY_THRESHOLD`, the pair is a candidate for the same theme group.
+
+6. **Conflict Detection** — Before merging a similar pair, both claims are sent to the LLM with a YES/NO prompt asking if they contradict each other. If YES, they are placed in separate theme groups, each retaining its original source attribution.
+
+7. **Export** — `digest.md` is written with numbered themes and source titles. `sources.json` is written with full metadata and claims per source. A PCA cluster plot is saved as `clusters.png`.
+
+---
+
+### How are claims grounded?
+
+Every claim returned by the LLM must include an `evidence` field containing an exact quote from the source text. After extraction, `validation.py` checks that this quote is a literal substring of the original content (`claim.evidence in original_text`). If the match fails, the claim is discarded entirely. This ensures every claim in the final digest can be traced back to a specific passage in a real source.
+
+---
+
+### How does deduplication and grouping work?
+
+Claims are embedded into 384-dimensional vectors. Cosine similarity is computed across all claim pairs. If two claims score above `SIMILARITY_THRESHOLD` (default `0.65`, configurable in `.env`), they are candidates for the same theme group.
+
+Before merging, an LLM conflict check runs on the pair. If the claims contradict each other, they are kept as separate themes — each attributed to its own source. This means similar claims are deduplicated into shared themes, while conflicting viewpoints are preserved side by side.
+
+---
+
+### One limitation
+
+The evidence grounding check is a strict substring match. If the LLM slightly rephrases or reformats a quote — different whitespace, punctuation, or truncation — the claim is rejected even if the content is valid. This causes over-filtering on sources with complex or inconsistent formatting, and can result in a source contributing fewer claims than expected.
+
+---
+
+### One improvement with more time
+
+Replace the strict substring validation with a fuzzy or semantic match (e.g., checking that the evidence has a cosine similarity above a threshold with passages from the source). This would retain valid claims that fail the exact match due to minor formatting differences, improving recall without sacrificing grounding.
+
+---
+
+## Stretch Goals Implemented
+
+| Goal | Status |
+|---|---|
+| Confidence score per claim | Implemented — LLM returns a 0.0–1.0 score per claim, stored in `sources.json` |
+| Simple clustering visualization | Implemented — PCA scatter plot saved as `clusters.png` |
+| Configurable grouping threshold | Implemented — `SIMILARITY_THRESHOLD` in `.env` |
+| Re-run without duplicating outputs | Implemented — output files are overwritten on each run; duplicate URLs are skipped within a run |

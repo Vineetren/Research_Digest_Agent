@@ -13,8 +13,13 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
 
 def ingest_urls(urls: List[str]) -> List[Source]:
     sources = []
+    seen_urls = set()
 
     for url in urls:
+        if url in seen_urls:
+            logging.warning(f"Duplicate URL skipped: {url}")
+            continue
+        seen_urls.add(url)
         try:
             response = requests.get(url, timeout=10)
             if response.status_code != 200:
@@ -23,7 +28,7 @@ def ingest_urls(urls: List[str]) -> List[Source]:
 
             soup = BeautifulSoup(response.text, "html.parser")
             title = soup.title.string if soup.title else None
-            content = clean_html(soup.get_text())
+            content = clean_html(response.text)
             if not content:
                 logging.warning(f"No content extracted from URL {url}")
                 continue
@@ -58,11 +63,14 @@ def ingest_folder(folder_path: str) -> List[Source]:
             with open(path, "r", encoding="utf-8") as f:
                 raw = f.read().strip()
 
-            # 🔹 If HTML file → clean it
+            # 🔹 If HTML file → extract title tag, clean content
             if filename.lower().endswith((".html", ".htm")):
+                soup = BeautifulSoup(raw, "html.parser")
+                title = soup.title.string.strip() if soup.title and soup.title.string else filename
                 content = clean_html(raw)
             else:
-                # 🔹 Plain text file → use raw text
+                # 🔹 Plain text file → use filename as title, raw text as content
+                title = filename
                 content = raw
 
             if not content:
@@ -72,7 +80,7 @@ def ingest_folder(folder_path: str) -> List[Source]:
             sources.append(
                 Source(
                     source_id=str(uuid.uuid4()),
-                    title=filename,
+                    title=title,
                     url=None,
                     content=content,
                     length=len(content),

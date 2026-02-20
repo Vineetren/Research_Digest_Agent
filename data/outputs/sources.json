@@ -1,105 +1,67 @@
 {
-  "3123f517-a831-4d17-8ff5-86d066548f5b": {
-    "claims": []
-  },
-  "1dc6001e-9efb-4db3-9966-622f207d81ca": {
+  "cf474025-2ccc-450a-ad17-68392ccdf171": {
+    "title": "article1.txt",
+    "url": null,
+    "length": 262,
     "claims": [
       {
-        "claim": "Data-driven machine learning has emerged as a promising approach for building accurate and robust statistical models from medical data.",
-        "evidence": "Data-driven machine learning (ML) has emerged as a promising approach for building accurate and robust statistical models from medical data,",
-        "confidence": null
+        "claim": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
+        "evidence": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
+        "confidence": 1.0
       },
       {
-        "claim": "Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.",
-        "evidence": "Existing medical data is not fully exploited by ML primarily because it sits in data silos and privacy concerns restrict access to this data.",
-        "confidence": null
-      },
-      {
-        "claim": "Federated learning (FL) enables gaining insights collaboratively without moving patient data beyond the firewalls of the institutions in which they reside.",
-        "evidence": "FL enables gaining insights collaboratively, e.g., in the form of a consensus model, without moving patient data beyond the firewalls of the institutions in which they reside.",
-        "confidence": null
-      },
-      {
-        "claim": "Models trained by FL can achieve performance levels comparable to ones trained on centrally hosted data sets and superior to models that only see isolated single-institutional data.",
-        "evidence": "Recent research has shown that models trained by FL can achieve performance levels comparable to ones trained on centrally hosted data sets and superior to models that only see isolated single-institutional data",
-        "confidence": null
-      },
-      {
-        "claim": "A successful implementation of FL could hold a significant potential for enabling precision medicine at large-scale, leading to models that yield unbiased decisions, optimally reflect an individual\u2019s physiology, and are sensitive to rare diseases while respecting governance and privacy concerns.",
-        "evidence": "A successful implementation of FL could thus hold a significant potential for enabling precision medicine at large-scale, leading to models that yield unbiased decisions, optimally reflect an individual\u2019s physiology, and are sensitive to rare diseases while respecting governance and privacy concerns.",
-        "confidence": null
+        "claim": "Machine learning models can identify patterns that human clinicians often miss.",
+        "evidence": "Machine learning models can also identify patterns that human clinicians often miss.",
+        "confidence": 1.0
       }
     ]
   },
-  "27c5bc33-aa61-46c5-a871-141467933fc7": {
+  "da5a53ac-674c-4b52-8d2e-13304367db34": {
+    "title": "article2.txt",
+    "url": null,
+    "length": 206,
     "claims": [
       {
-        "claim": "WHO has regional websites",
-        "evidence": "WHO Regional websites",
-        "confidence": null
+        "claim": "Hospitals are using AI systems to optimize staff scheduling",
+        "evidence": "Hospitals are using AI systems to optimize staff scheduling",
+        "confidence": 1.0
       },
       {
-        "claim": "WHO has a presence in countries",
-        "evidence": "WHO in countries",
-        "confidence": null
+        "claim": "AI systems can reduce patient wait times",
+        "evidence": "reduce patient wait times",
+        "confidence": 0.95
       },
       {
-        "claim": "WHO has a newsroom",
-        "evidence": "Newsroom",
-        "confidence": null
+        "claim": "AI systems can predict hospital readmissions",
+        "evidence": "predict hospital readmissions",
+        "confidence": 0.95
       },
       {
-        "claim": "WHO has a data collection system",
-        "evidence": "Data collection",
-        "confidence": null
+        "claim": "Ethical guidelines are essential to AI applications",
+        "evidence": "Ethical guidelines are essential to ensure fairness and privacy in AI applications",
+        "confidence": 1.0
       },
       {
-        "claim": "WHO has a financial system",
-        "evidence": "Financial statements",
-        "confidence": null
+        "claim": "AI applications require fairness and privacy",
+        "evidence": "ensure fairness and privacy in AI applications",
+        "confidence": 1.0
       }
     ]
   },
-  "72073674-5465-461d-877b-ff4462f41e72": {
+  "62003372-b313-4323-becf-37bf2042f46c": {
+    "title": "AI and Healthcare",
+    "url": null,
+    "length": 286,
     "claims": [
       {
-        "claim": "Data mining combines statistics and artificial intelligence to analyze large datasets to discover meaningful insights and useful information.",
-        "evidence": "Learn how data mining combines statistics and artificial intelligence to analyze large datasets to discover meaningful insights and useful information.",
-        "confidence": null
+        "claim": "Patient data privacy remains a significant challenge",
+        "evidence": "Patient data privacy remains a significant challenge, especially when large datasets are used to train machine learning models.",
+        "confidence": 1.0
       },
       {
-        "claim": "Chatbots simulate human conversation, often relying on NLP to parse inputs and generative AI to automate responses.",
-        "evidence": "Explore chatbot technology to understand how chatbots simulate human conversation, often relying on NLP to parse inputs and generative AI to automate responses.",
-        "confidence": null
-      },
-      {
-        "claim": "Business intelligence processes data to gain actionable insights and inform decision-making.",
-        "evidence": "Know how to harness business data by understanding how business intelligence processes data to gain actionable insights and inform decision-making.",
-        "confidence": null
-      }
-    ]
-  },
-  "57140ec1-152f-4a29-a609-04697eb75466": {
-    "claims": [
-      {
-        "claim": "Artificial intelligence (AI) will increasingly be applied within the field of healthcare.",
-        "evidence": "The complexity and rise of data in healthcare means that artificial intelligence (AI) will increasingly be applied within the field.",
-        "confidence": null
-      },
-      {
-        "claim": "Several types of AI are already being employed by payers and providers of care, and life sciences companies.",
-        "evidence": "Several types of AI are already being employed by payers and providers of care, and life sciences companies.",
-        "confidence": null
-      },
-      {
-        "claim": "Deep learning is increasingly being applied to radiomics, or the detection of clinically relevant features in imaging data beyond what can be perceived by the human eye.",
-        "evidence": "Deep learning is increasingly being applied to radiomics, or the detection of clinically relevant features in imaging data beyond what can be perceived by the human eye.",
-        "confidence": null
-      },
-      {
-        "claim": "Implementation factors will prevent large-scale automation of healthcare professional jobs for a considerable period.",
-        "evidence": "Although there are many instances in which AI can perform healthcare tasks as well or better than humans, implementation factors will prevent large-scale automation of healthcare professional jobs for a considerable period.",
-        "confidence": null
+        "claim": "Integration of AI technologies introduces risks",
+        "evidence": "Integration of AI technologies introduces risks",
+        "confidence": 1.0
       }
     ]
   }
