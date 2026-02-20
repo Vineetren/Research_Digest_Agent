@@ -1,60 +1,3 @@
-# import argparse
-# from agent.ingestion import ingest_urls, ingest_folder
-# from agent.claim_extraction import extract_claims
-# from agent.validation import validate_claims
-# from agent.grouping import group_claims
-# from agent.digest import generate_digest
-# from agent.exporter import export_sources
-
-
-# def main():
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument("--input_type", required=True, choices=["urls", "folder"])
-#     parser.add_argument("--input_path", required=True)
-#     parser.add_argument("--topic", required=True)
-
-#     args = parser.parse_args()
-
-#     if args.input_type == "urls":
-#         with open(args.input_path, "r") as f:
-#             urls = [line.strip() for line in f.readlines()]
-#         sources = ingest_urls(urls)
-#     else:
-#         sources = ingest_folder(args.input_path)
-
-#     print("Loaded sources:")
-#     for s in sources:
-#         print(s.source_id, len(s.content))
-
-#     all_claims = []
-
-#     for source in sources:
-#         claims = extract_claims(source)
-#         validated = validate_claims(claims, source.content)
-#         all_claims.extend(validated)
-
-#     groups = group_claims(all_claims)
-
-#     digest_file_path = "data/outputs/digest.md"
-
-#     if not groups:
-#         with open(digest_file_path, "w", encoding="utf-8") as f:
-#             f.write(f"# Research Digest: {args.topic}\n\n")
-#             f.write("No valid claims were extracted from the provided sources.\n")
-#         return
-
-#     digest = generate_digest(groups, args.topic)
-
-#     with open(digest_file_path, "w", encoding="utf-8") as f:
-#         f.write(digest)
-
-#     export_sources(groups, "data/outputs/sources.json")
-
-
-# if __name__ == "__main__":
-#     main()
-
-
 import argparse
 from agent.ingestion import ingest_urls, ingest_folder
 from agent.claim_extraction import extract_claims
@@ -124,7 +67,7 @@ def main():
     with open(digest_file_path, "w", encoding="utf-8") as f:
         f.write(digest)
 
-    export_sources(groups, "data/outputs/sources.json")
+    export_sources(groups, "data/outputs/sources.json", sources)
     print(f"Digest and sources exported. Total claims grouped: {len(groups)}")
 
 

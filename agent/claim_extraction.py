@@ -24,7 +24,13 @@ Each claim must include:
 - claim: concise statement
 - evidence: exact quote from the text supporting the claim
 
-Return ONLY valid JSON list:
+You MUST return ONLY valid JSON.
+Do NOT include explanations.
+Do NOT include markdown.
+Do NOT include numbering.
+Do NOT include text before or after JSON.
+
+Return EXACTLY this format:
 [
   {{
     "claim": "...",
@@ -55,9 +61,10 @@ TEXT:
 
         parsed = json.loads(json_block)
 
-    except Exception:
-        print("⚠️ Failed to parse model output.")
-        print("Raw model output:\n", content)
+    except Exception as e:
+        print(f"\n⚠️ Failed parsing source {source.source_id}")
+        print("Error:", e)
+        print("Raw output:\n", content)
         return []
 
 
