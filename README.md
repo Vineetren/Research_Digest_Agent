@@ -258,6 +258,8 @@ Each output folder contains `digest.md`, `sources.json`, and `clusters.png` from
 
 ---
 
+## Questions
+
 ### How does the agent process sources step by step?
 
 1. **Ingestion** — URLs are fetched with `requests`; local files are read directly. Duplicate URLs are skipped. HTML is parsed with BeautifulSoup, scripts and styles are stripped, and text is normalised. Files shorter than `MIN_CONTENT_LENGTH` are discarded with a warning.
