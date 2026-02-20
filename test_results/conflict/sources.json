@@ -1,0 +1,25 @@
+{
+  "65822387-64ad-4ec0-b1db-dafd82634dff": {
+    "claims": [
+      {
+        "claim": "AI improves diagnostic accuracy in hospitals",
+        "evidence": "AI improves diagnostic accuracy in hospitals",
+        "confidence": null
+      }
+    ]
+  },
+  "ab49dee0-f8a7-4115-b215-566fd38f60ef": {
+    "claims": [
+      {
+        "claim": "AI reduces diagnostic accuracy in hospitals",
+        "evidence": "AI reduces diagnostic accuracy in hospitals due to algorithmic bias.",
+        "confidence": null
+      },
+      {
+        "claim": "Algorithmic bias is a reason for AI reducing diagnostic accuracy in hospitals",
+        "evidence": "AI reduces diagnostic accuracy in hospitals due to algorithmic bias.",
+        "confidence": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.
+Machine learning models trained on large medical datasets are capable of identifying patterns that are often missed by human clinicians.
+AI systems are being used to optimize staff scheduling, reduce patient wait times, and predict hospital readmissions.

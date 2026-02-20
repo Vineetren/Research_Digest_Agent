@@ -1,0 +1,59 @@
+{
+  "f919136d-ca24-48d0-9734-a99ef2e6c2fd": {
+    "claims": [
+      {
+        "claim": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
+        "evidence": "AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists.",
+        "confidence": null
+      },
+      {
+        "claim": "Machine learning models can identify patterns that human clinicians often miss.",
+        "evidence": "Machine learning models can also identify patterns that human clinicians often miss.",
+        "confidence": null
+      }
+    ]
+  },
+  "83e09d9b-043b-4504-9dea-29a1f594e1f5": {
+    "claims": [
+      {
+        "claim": "Hospitals are using AI systems to optimize staff scheduling",
+        "evidence": "Hospitals are using AI systems to optimize staff scheduling",
+        "confidence": null
+      },
+      {
+        "claim": "AI systems can reduce patient wait times",
+        "evidence": "reduce patient wait times",
+        "confidence": null
+      },
+      {
+        "claim": "AI systems can predict hospital readmissions",
+        "evidence": "predict hospital readmissions",
+        "confidence": null
+      },
+      {
+        "claim": "Ethical guidelines are essential to AI applications",
+        "evidence": "Ethical guidelines are essential to ensure fairness and privacy in AI applications",
+        "confidence": null
+      },
+      {
+        "claim": "AI applications require fairness and privacy",
+        "evidence": "ensure fairness and privacy in AI applications",
+        "confidence": null
+      }
+    ]
+  },
+  "297ef44b-f880-4d3f-bc25-921b7d1ec60f": {
+    "claims": [
+      {
+        "claim": "Patient data privacy remains a significant challenge",
+        "evidence": "Patient data privacy remains a significant challenge, especially when large datasets are used to train machine learning models.",
+        "confidence": null
+      },
+      {
+        "claim": "Integration of AI technologies introduces risks",
+        "evidence": "Integration of AI technologies introduces risks",
+        "confidence": null
+      }
+    ]
+  }
+}

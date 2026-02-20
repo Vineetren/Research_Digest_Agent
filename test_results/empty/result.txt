@@ -1,0 +1,3 @@
+In case of empty input or invalid url this gets logged.: 
+    WARNING: No content extracted from file empty.txt
+    No sources were loaded. Exiting. 

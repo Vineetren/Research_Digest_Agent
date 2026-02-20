@@ -1,0 +1,1 @@
+Artificial intelligence in healthcare has shown promising results. AI-powered diagnostic systems can detect certain cancers with accuracy comparable to experienced radiologists. Machine learning models can also identify patterns that human clinicians often miss.
